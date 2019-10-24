@@ -1,0 +1,15 @@
+<h1><%= @cocktail.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :description %>
+          <%= f.input :ingredient_id, collection: Ingredient.all %>
+          <%= f.submit "submit dose", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
