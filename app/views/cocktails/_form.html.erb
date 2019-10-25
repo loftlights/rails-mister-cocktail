@@ -1,13 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 mx-auto">
-      <div class="card">
-        <%= simple_form_for cocktail do |f| %>
-          <%= f.input :name %>
-          <%= f.input :image %>
-          <%= f.submit "submit cocktail", class: "btn btn-primary" %>
-        <% end %>
+<!-- <div class="container"> -->
+  <!-- <div class="row"> -->
+    <!-- <div class="col-md-6 mx-auto"> -->
+      <div class="card card-width">
+        <div class ="card-body">
+          <%= simple_form_for cocktail do |f| %>
+            <%= f.input :name %>
+            <%= f.input :image, :label => "Image URL" %>
+            <%= f.submit "submit cocktail", class: "btn btn-primary ten-margin" %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->

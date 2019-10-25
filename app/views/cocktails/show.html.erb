@@ -1,26 +1,31 @@
-<h1><%=@cocktail.name %></h1>
 
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h1><%=@cocktail.name %></h1>
+      <table style="width:50%", class = "table-hover table table-condensed table-white">
+      <tr>
+        <th>Ingredient</th>
+        <th>Description</th>
+      </tr>
+      <% @cocktail.doses.each do |dose| %>
+        <tr>
+          <td><%= dose.ingredient.name  %></td>
+          <td><%= dose.description  %></td>
+        </tr>
+      <% end %>
+      </table>
 
+      <%#= link_to 'Edit', cocktails_path, class: "btn btn-primary" %>
 
+      <%= link_to 'Back', root_path, class: "btn btn-primary" %>
 
-<table style="width:50%", class = "table-hover table table-condensed table-white">
-<tr>
-  <th>Ingredient</th>
-  <th>Description</th>
-</tr>
-<% @cocktail.doses.each do |dose| %>
-  <tr>
-    <td><%= dose.ingredient.name  %></td>
-    <td><%= dose.description  %></td>
-  </tr>
-<% end %>
-</table>
+      <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
 
-<%#= link_to 'Edit', cocktails_path, class: "btn btn-primary" %>
+      <%= link_to 'New Dose', new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
 
-<%= link_to 'Back', root_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 
-<%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-
-<%= link_to 'New Dose', new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+</div>
 
