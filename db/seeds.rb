@@ -10,14 +10,17 @@ puts 'Cleaning database...'
 Ingredient.destroy_all
 
 puts 'Creating ingredients...'
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "Lemon")
+Ingredient.create(name: "Ice")
+Ingredient.create(name: "Mint leaves")
+Ingredient.create(name: "Vodka")
+Ingredient.create(name: "Rum")
+Ingredient.create(name: "Gin")
 
 puts 'Creating cocktails...'
-Cocktail.create(name: "Frozen Margarita")
-Cocktail.create(name: "Sex on the beach")
-Cocktail.create(name: "Gin Tonic")
+Cocktail.create(name: "Frozen Margarita", image:"https://www.isabeleats.com/wp-content/uploads/2018/08/frozen-margarita-recipe-small-3.jpg")
+Cocktail.create(name: "Sex on the beach", image:"https://www.isabeleats.com/wp-content/uploads/2018/08/frozen-margarita-recipe-small-3.jpg")
+Cocktail.create(name: "Gin Tonic", image:"https://www.thespruceeats.com/thmb/9g5q0ChNcHs5IjThGwciEsa5d0Y=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-tonic-5a8f334b8e1b6e0036a9631d.jpg")
 
 puts 'Creating doses...'
 Dose.create(description: "half a spoon")

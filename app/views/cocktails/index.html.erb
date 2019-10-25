@@ -1,7 +1,35 @@
 
-<h1>All Cocktails</h1>
 
-<table>
+<div class="container">
+  <h1>All Cocktails</h1>
+  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary ten-margin" %>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-ban top-right-image"></i>
+      <% end %>
+      <%= link_to cocktail_path(cocktail) do %>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image %>)">
+          <%= cocktail.name %>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+
+</div>
+<!--
+<div class="card" style="width: 18rem;">
+  <img src="https://bit.ly/2N4Awjq" class="card-img-top home-card-img" alt="cocktail">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->
+
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -10,17 +38,17 @@
   </thead>
 
   <tbody>
-    <% @cocktails.each do |cocktail| %>
+    <%# @cocktails.each do |cocktail| %>
       <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail, class: "btn btn-primary" %></td>
+        <td><%#= cocktail.name %></td>
+        <td><%#= link_to 'Show', cocktail, class: "btn btn-primary" %></td>
         <td><%#= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Delete', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%#= link_to 'Delete', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
-<br>
+<br> -->
 
-<%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary" %>
+
