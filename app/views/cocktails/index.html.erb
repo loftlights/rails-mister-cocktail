@@ -5,9 +5,9 @@
   <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary ten-margin" %>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail, method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <i class="fas fa-ban top-right-image"></i>
-      <% end %>
+      <%#= link_to cocktail, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <!-- <i class="fas fa-ban top-right-image"></i> -->
+      <%# end %>
       <%= link_to cocktail_path(cocktail) do %>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image %>)">
